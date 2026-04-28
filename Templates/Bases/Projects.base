@@ -1,0 +1,65 @@
+filters:
+  and:
+    - '!file.name.contains("Template")'
+    - note.categories.contains(link("Projects"))
+properties:
+  note.status:
+    displayName: Status
+  note.url:
+    displayName: URL
+  file.name:
+    displayName: Name
+  note.type:
+    displayName: Type
+  note.year:
+    displayName: Year
+  note.repo:
+    displayName: Repo
+  note.description:
+    displayName: Description
+views:
+  - type: table
+    name: All
+    order:
+      - file.name
+      - type
+      - status
+      - description
+      - url
+    sort:
+      - column: note.status
+        direction: ASC
+      - column: file.name
+        direction: ASC
+    columnSize:
+      file.name: 209
+      note.type: 199
+  - type: table
+    name: Active
+    filters:
+      and:
+        - note.status = "active"
+    order:
+      - file.name
+      - type
+      - description
+      - url
+    sort:
+      - column: note.type
+        direction: ASC
+      - column: file.name
+        direction: ASC
+  - type: table
+    name: By Type
+    order:
+      - file.name
+      - type
+      - status
+      - description
+    sort:
+      - column: note.type
+        direction: ASC
+      - column: note.status
+        direction: ASC
+      - column: file.name
+        direction: ASC

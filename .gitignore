@@ -1,0 +1,45 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.Trash-*
+
+# Obsidian — workspace and cache (per-machine state)
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/hotkeys.json
+
+# Obsidian trash and sync state
+.trash/
+.obsidian/plugins/*/data.json.bak
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code — local settings (per-machine permissions)
+.claude/settings.local.json
+
+# Node / build artifacts (in case of plugin dev)
+node_modules/
+dist/
+build/
+*.log
