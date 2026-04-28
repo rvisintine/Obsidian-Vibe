@@ -147,10 +147,27 @@ When populating media notes:
 - Configure in your global Claude config: where development projects live (e.g., `~/development/`), video projects, etc.
 - When syncing projects, scan those directories for project folders.
 
-## Skills
+## Skills & Commands
 
-Custom skills live in `.claude/skills/` within this vault and sync via Obsidian Sync.
+Custom skills live in `Resources/Skills/` and are exposed to Claude Code via the `.claude/skills` symlink. Slash commands live in `.claude/commands/`.
 
-- `/media` — Natural language media intake (books, movies, shows, games)
-- `/project-sync` — Scan project directories and create/update project notes
-- `/maintain` — Vault maintenance (fix links, properties, orphaned notes)
+### Skills (always-on, natural-language triggered)
+- **obsidian-media** — media intake: "I just finished Dark Matter", "add Inception to watchlist"
+- **obsidian-status** — status queries + archive: "what am I reading?", "pull up X", "archive Y", "drop Z"
+- **obsidian-maintain** — vault hygiene: broken links, orphans, missing properties
+
+### Slash commands
+- `/vault-onboard` — first-run interview, populates `## About Me` in this file
+- `/what-now` — vault menu launcher (capture, plan, maintain)
+- `/daily` — brain dump → structured daily note with carry-forward open items
+- `/research` — produce a research brief saved to `References/`
+- `/brainstorm` — guided questions → one concrete next action
+- `/media` — alias for media intake skill
+- `/maintain` — alias for maintenance skill
+
+### Configs
+Per-skill configs live in `Resources/Config/`:
+- `daily.md` — daily-notes template, folder, behaviors
+- `research.md` — research brief structure and defaults
+
+Configs are created on first run of `/daily` or `/research`. Edit anytime.

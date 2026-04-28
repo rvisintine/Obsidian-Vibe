@@ -52,12 +52,23 @@ Designed to pair with [Claude Code](https://docs.claude.com/en/docs/claude-code/
 
 ## Using With Claude Code
 
-The vault includes two skills that activate when you run Claude Code in this directory:
+Run Claude Code in the vault directory and you get a set of skills (always-on, natural-language) and slash commands:
 
-- `/media` — natural-language media intake. Example: *"I just finished reading Project Hail Mary"* → creates `Project Hail Mary (Book).md` with cover, author, ISBN, synopsis pre-filled.
-- `/maintain` — vault health check. Fixes broken links, orphaned notes, inconsistent properties.
+### Skills
 
-`CLAUDE.md` defines the conventions Claude follows when creating or editing notes in this vault.
+- **obsidian-media** — *"I just finished reading Project Hail Mary"* → creates `Project Hail Mary (Book).md` with cover, author, ISBN, synopsis, and a 7-question mini-review.
+- **obsidian-status** — *"what am I reading?"*, *"pull up Severance"*, *"archive that project"* → status queries + frontmatter mutations on existing notes.
+- **obsidian-maintain** — vault health check: broken links, orphans, inconsistent properties, missing fields.
+
+### Slash commands
+
+- `/vault-onboard` — first-run interview that personalizes `CLAUDE.md` with your profile (name, household, interests, food rules, communication style, ground rules).
+- `/what-now` — vault menu launcher; pick capture / plan / maintain or just describe what you need.
+- `/daily` — brain dump → structured daily note with carry-forward of unfinished `- [ ]` items from the prior day. First run sets up the config.
+- `/research <topic>` — produce a research brief saved to `References/` with sources, findings, and recommendations. First run sets up defaults.
+- `/brainstorm` — guided 2–3 questions → one concrete next action, mapped to a vault operation.
+
+`CLAUDE.md` defines the conventions Claude follows when creating or editing notes in this vault. Per-skill configs live in `Resources/Config/` and are generated on first use.
 
 ## Cross-Linking
 
